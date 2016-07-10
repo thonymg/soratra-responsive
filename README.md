@@ -44,7 +44,9 @@ you can configure the compass vertical rhythm.
   $rem-with-px-fallback : true;
 ```
 
-### use
+### config
+
+[Demo](http://www.sassmeister.com/gist/756b142d9fe22a4d211c116fbf9a51ef)
 
 the first option corespond to modular-scale $ms-base variable used in h6 selector, soratra-responsive automaticaly calculate each other heading size
 
@@ -62,6 +64,33 @@ the third option corespond to modular-scale starting point. generaly you don't h
 ```Sass
   $tmg-mobile-ms : 13px, $golden, 8;
 ```
+### use
+
+for the responsive typography  
+  ```Sass
+    @include tmg-base-vertical-rhythm();
+  ```
+
+Mixins for easy heading style
+  ```Sass
+    @include tmg-base-heading-style(){
+      color: red;
+    }
+  ```
+
+Mixins for easy heading style with a selector
+  ```Sass
+    @include tmg-select-heading-style(".truc"){
+      color: blue;
+    }
+  ```
+
+Mixins for easy block container style with selector
+  ```Sass
+    @include tmg-others-block-container(".foo"){
+    	color: green
+    }  
+  ```
 
 ### other projects or alternatives
 my library for advanced [bem selector](https://github.com/thonymg/fotsy-sass-bem)

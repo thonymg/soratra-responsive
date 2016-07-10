@@ -13,11 +13,6 @@
 // Config exemple
 
 
-$tmg-mobile-ms : 13px 14px, $octave;
-$tmg-tablette-ms : 14px 16px, $octave;
-$tmg-desktop-ms : 16px 18px, 1.25;
-$tmg-large-ms : 18px, 1.25;
-$tmg-x-large-ms : 18px, 1.25;
 
 //---------------------------
 // Compass Vertical Rhythm variables
@@ -125,17 +120,21 @@ $rem-with-px-fallback : true;
 
 
 // @Usage
+// the base mixins
 @include tmg-base-vertical-rhythm();
 
 // @Usage
+// Mixins for easy heading style
 @include tmg-base-heading-style() {
   color : red;
 }
 // @Usage
+// Mixins for easy heading style with a selector
 @include tmg-select-heading-style(".truc") {
   color : blue;
 }
 // @Usage
+// Mixins for easy block container style with selector
 @include tmg-others-block-container(".foo") {
   color : green;
 }
