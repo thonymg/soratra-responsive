@@ -6,14 +6,20 @@
 
 @import "compass";
 @import "modular-scale";
+@import "tmg-media-query";
+
 //---------------------------
 // Modular scale variables
-$ms-base : 18px, 16px;
-$ms-ratio : 1.25;
+// Config exemple
+$tmg-mobile-ms : 1em, $octave;
+$tmg-tablette-ms : 14px, $golden $octave;
+$tmg-desktop-ms : 1em, 1.25;
+$tmg-large-ms : 1em, 1.25, 7;
+$tmg-x-large-ms : 1em, 1.25, 12;
 
 //---------------------------
 // Compass Vertical Rhythm variables
-$base-font-size : ms(0); //modular scale function
+
 $base-line-height : 24px;
 $rhythm-unit : "rem";
 $rem-with-px-fallback : true;
@@ -29,28 +35,21 @@ $rem-with-px-fallback : true;
 
 //---------------------------
 // Thony Mixins
-@mixin tmg-heading-size( $rythm : 6 ){
-  @if $rythm == "mid" {
-    $rythm : 6;
-  };
-  @if $rythm == "max" {
-    $rythm : 17;
-  };
-  @if $rythm == "min" {
-    $rythm : 0;
-  };
+// tmg-heading-size
+
+@mixin tmg-heading-size($tmg-f-size : 16px, $tmg-ratio: $golden, $tmg-start: 6 ) {
   $h-val : 6;
   @for $i from 1 through $h-val {
     $heading : h#{$i};
     h#{$i} {
       // compass mixins
-      @include adjust-font-size-to( ms($rythm - $i));
+      $fz : ms(($tmg-start - $i), $tmg-f-size, $tmg-ratio);
+      @include adjust-font-size-to( $fz );
     }
-    .h#{$i} {
-      @extend #{$heading};
-    };
   }
 }
+
+// tmg-base-heading-style
 @mixin tmg-base-heading-style() {
   %invisible-heading-not-void {
     @content;
@@ -67,6 +66,7 @@ $rem-with-px-fallback : true;
   }
 }
 
+// tmg-select-heading-style
 @mixin tmg-select-heading-style($selector) {
   %invisible-heading-select-not-void {
     @content;
@@ -84,6 +84,7 @@ $rem-with-px-fallback : true;
   }
 }
 
+// tmg-others-block-container
 @mixin tmg-others-block-container($selector : null) {
   p#{$selector} ,
   ul#{$selector} ,
@@ -93,43 +94,46 @@ $rem-with-px-fallback : true;
   blockquote#{$selector} ,
   dl#{$selector} ,
   form#{$selector} {
-    @content
+    @content;
   }
 }
+
+// tmg-others-block-list
 @mixin tmg-others-block-list($selector : null) {
   li#{$selector} ,
   dt#{$selector} ,
   dd#{$selector} {
-    @content
+    @content;
   }
 }
 
-
-@mixin tmg-base-vertical-rhythm($tmg-base-font-size : "mid") {
+//  tmg-base-vertical-rhythm()
+@mixin tmg-base-vertical-rhythm() {
   //Compass mixins
   @include establish-baseline();
 
   @include tmg-base-heading-style() {
     @extend %invisible-all-margin;
   };
-  @include tmg-heading-size($tmg-base-font-size);
+  @include tmg-all-heading-size();
   @include tmg-others-block-container() {
     @extend %invisible-all-margin;
   };
 }
 
-@include tmg-base-vertical-rhythm(min);
 
-//@include tmg-heading-size();
+// @Usage
+@include tmg-base-vertical-rhythm();
 
-//@include tmg-base-heading-style(){
-//  color: red;
-//}
-
-//@include tmg-select-heading-style(".truc"){
-//  color: blue;
-//}
-
-// @include tmg-others-block-container(".foo"){
-// 	color: green
-// }
+// @Usage
+@include tmg-base-heading-style() {
+  color : red;
+}
+// @Usage
+@include tmg-select-heading-style(".truc") {
+  color : blue;
+}
+// @Usage
+@include tmg-others-block-container(".foo") {
+  color : green;
+}
