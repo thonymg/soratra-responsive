@@ -1,0 +1,37 @@
+//====================================================
+//      Mixin
+//====================================================
+$tmg-bp-mobile : 0;
+$tmg-bp-tablette : 47em;
+$tmg-bp-desktop : 63em;
+$tmg-bp-large : 77em;
+$tmg-bp-x-large : 90em;
+
+//- Usage plus sépcifique pour le layout
+@mixin tmg-mq($media) {
+  @if $media == "mobile" {
+    @media only screen and (min-width: $tmg-bp-mobile) {
+      @content;
+    }
+  }
+  @if $media == "tablette" {
+    @media only screen and (min-width: $tmg-bp-tablette) {
+      @content;
+    }
+  }
+  @else if $media == "desktop" {
+    @media only screen and (min-width: $tmg-bp-desktop) {
+      @content;
+    }
+  }
+  @else if $media == "large" {
+    @media only screen and (min-width: $tmg-bp-large) {
+      @content;
+    }
+  }
+  @else if $media == "x-large" {
+    @media only screen and (min-width: $tmg-bp-x-large) {
+      @content;
+    }
+  }
+}
