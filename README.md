@@ -9,7 +9,7 @@
   - Compass (v1.0.3) or +
   - Modular Scale (v2.1.1) or +
 
-1. Clone `soratra responsive` somewhere to your project:
+1. Clone `soratra-responsive` somewhere to your project:
 
     ```sh
     https://github.com/thonymg/soratra-responsive.git
@@ -94,6 +94,7 @@ Mixins for easy block container style with selector
 
 ### other projects or alternatives
 my library for advanced [bem selector](https://github.com/thonymg/fotsy-sass-bem)
+
 other library for [responsive typography](https://github.com/corysimmons/typographic)
 
 - - -
