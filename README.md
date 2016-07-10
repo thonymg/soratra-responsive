@@ -92,12 +92,14 @@ Mixins for easy block container style with selector
     }  
   ```
 
-### other projects or alternatives
+### my other project
 my library for advanced [bem selector](https://github.com/thonymg/fotsy-sass-bem)
 
+### alternative
 other library for [responsive typography](https://github.com/corysimmons/typographic)
 
 - - -
+### other documentation
 See the [compass](http://www.modularscale.com/) & [modular-scale](http://compass-style.org/reference/compass/typography/vertical_rhythm/) documentation
 
 
