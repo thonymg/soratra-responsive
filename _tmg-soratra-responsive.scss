@@ -64,35 +64,26 @@ $rem-with-px-fallback : true;
 }
 
 @mixin tmg-base-heading-style() {
-  %invisible-heading-not-void {
+  
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
     @content;
-  };
-  $h-val : 6;
-  @for $i from 1 through $h-val {
-    $heading : h#{$i};
-    h#{$i} {
-      @extend %invisible-heading-not-void;
-    }
-    .h#{$i} {
-      @extend #{$heading};
-    };
   }
 }
 
 @mixin tmg-select-heading-style($selector) {
-  %invisible-heading-select-not-void {
+
+  h1#{$selector}, .h1#{$selector},
+  h2#{$selector}, .h2#{$selector},
+  h3#{$selector}, .h3#{$selector},
+  h4#{$selector}, .h4#{$selector},
+  h5#{$selector}, .h5#{$selector},
+  h6#{$selector}, .h6#{$selector} {
     @content;
-  };
-  $context : $selector;
-  $h-val : 6;
-  @for $i from 1 through $h-val {
-    $heading : h#{$i};
-    h#{$i}#{$context} {
-      @extend %invisible-heading-select-not-void;
-    }
-    .h#{$i} {
-      @extend #{$heading};
-    };
   }
 }
 
