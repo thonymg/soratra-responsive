@@ -34,7 +34,7 @@ $rem-with-px-fallback : true;
   $h-val : 6;
   @for $i from 1 through $h-val {
     $heading : h#{$i};
-    h#{$i} {
+    h#{$i} , .h#{$i}{
       // compass mixins
       $fz : ms( ( $tmg-start - $i), $tmg-f-size, $tmg-ratio);
       @include adjust-font-size-to( $fz );
