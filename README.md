@@ -1,26 +1,47 @@
-# Soratra responsive — mixins for responsive typography Sass/Scss -
-##Mixin pour créer de la typography responsive en Sass/Scss.
-
-* Note: Not tested with libSass and Sass < 3.4.
+# Soratra responsive — Tools for responsive typography in Sass/Scss
 
 ## Install
+
 0. You need
-  - Sass (v3.4.14) or +
-  - Compass (v1.0.3) or +
-  - Modular Scale (v2.1.1) or +
 
-1. Clone `soratra-responsive` somewhere to your project:
+- Sass (v3.4.14) or +
 
-    ```sh
-    https://github.com/thonymg/soratra-responsive.git
-    ```
+1. Clone `soratra` somewhere to your project:
+
+   ```sh
+   https://github.com/thonymg/soratra-responsive.git
+   ```
+
 2. Include it in your main Scss file:
 
-    ```Sass
-    @import "tmg-soratra-responsive.scss";
-    ```
+   ```Sass
+   @import "soratra.scss";
+   ```
+
+### Installing with npm and using a Node-based asset pipeline
+
+1. Add Soratra as a dependency:
+
+   ```bash
+   npm install --save soratra
+   ```
+
+1. If you’re using [eyeglass], skip to Step 3. Otherwise, you’ll need to add
+   Soratra to your node-sass `includePaths` option.
+   `require("soratra").includePaths` is an array of directories that you should
+   pass to node-sass. How you do this depends on how node-sass is integrated
+   into your project.
+
+1. Import Soratra into your Sass files:
+
+   ```scss
+   @import "soratra";
+   ```
+
+[eyeglass]: https://github.com/sass-eyeglass/eyeglass
 
 ## Config
+
 Soratra-responsive use compass & modular-scale mixins, variables & function.
 
 you can use different modular-scale configuration for each device.
@@ -34,6 +55,7 @@ you can use different modular-scale configuration for each device.
   $tmg-large-ms : 18px, 1.25;
   $tmg-x-large-ms : 18px, 1.25;
 ```
+
 you can configure the compass vertical rhythm.
 
 ```Sass
@@ -46,9 +68,7 @@ you can configure the compass vertical rhythm.
 
 ### config
 
-[Demo](http://www.sassmeister.com/gist/756b142d9fe22a4d211c116fbf9a51ef)
-
-the first option corespond to modular-scale $ms-base variable used in h6 selector, soratra-responsive automaticaly calculate each other heading size
+The first option corespond to modular-scale \$ms-base variable used in h6 selector, soratra-responsive automaticaly calculate each other heading size
 
 ```Sass
   $tmg-mobile-ms : 13px;
@@ -59,51 +79,62 @@ the second option corespond to modular scale $ms-ratio. By defaut soratra-respon
 ```Sass
   $tmg-mobile-ms : 13px, $golden;
 ```
+
 the third option corespond to modular-scale starting point. generaly you don't have to change the default value. By default soratra-responsive starts at 6 (the modular-scale starting count) and decrement this value.
 
 ```Sass
   $tmg-mobile-ms : 13px, $golden, 8;
 ```
+
 ### use
 
-for the responsive typography  
-  ```Sass
-    @include tmg-base-vertical-rhythm();
-  ```
+for the responsive typography
+
+```Sass
+  @include tmg-base-vertical-rhythm();
+```
 
 Mixins for easy heading style
-  ```Sass
-    @include tmg-base-heading-style(){
-      color: red;
-    }
-  ```
+
+```Sass
+  @include tmg-base-heading-style(){
+    color: red;
+  }
+```
 
 Mixins for easy heading style with a selector
-  ```Sass
-    @include tmg-select-heading-style(".truc"){
-      color: blue;
-    }
-  ```
+
+```Sass
+  @include tmg-select-heading-style(".truc"){
+    color: blue;
+  }
+```
 
 Mixins for easy block container style with selector
-  ```Sass
-    @include tmg-others-block-container(".foo"){
-    	color: green
-    }  
-  ```
+
+```Sass
+  @include tmg-others-block-container(".foo"){
+  	color: green
+  }
+```
 
 ### my other project
+
 my library for advanced [bem selector](https://github.com/thonymg/fotsy-sass-bem)
 
 ### alternative
+
 other library for [responsive typography](https://github.com/corysimmons/typographic)
 
-- - -
-### other documentation
-See the [compass](http://www.modularscale.com/) & [modular-scale](http://compass-style.org/reference/compass/typography/vertical_rhythm/) documentation
+---
 
+### other documentation
+
+See the [modular-scale](http://www.modularscale.com/) & [compass](http://compass-style.org/reference/compass/typography/vertical_rhythm/) documentation
 
 Je suis un peuple d'Anosibe. [follow Anosibe on twitter](https://twitter.com/anosibe/).
 Or [follow me on twitter](https://twitter.com/thonyMg/).
 
-* Paix et guérrisons pour les tiens.
+---
+
+Paix et Guerisons - with 💘 [Thony](https://github.com/thonymg)
