@@ -1,7 +1,13 @@
 {
   "name": "Soratra - Responsive",
-  "description": "mixins for responsive typography selector in Sass/Scss - Mixin pour créer de la typo responsive avec Sass/Scss.",
-  "tags": ["Scss", "Typo", "Vertical Rhythm", "responsive", "Compass", "modular-scale"],
+  "description": "Tools for responsive typography in Sass/Scss - Outils pour créer de la typography responsive avec Sass/Scss.",
+  "tags": [
+    "Scss",
+    "Typo",
+    "Vertical Rhythm",
+    "responsive",
+    "modular-scale"
+  ],
   "author": "thonyMg",
   "docs": "https://github.com/thonymg/soratra-responsive"
 }

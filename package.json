@@ -1,0 +1,32 @@
+{
+    "name": "soratra-responsive",
+    "description": "tools for responsive typography",
+    "author": {
+        "name": "Anthony Michel (@thonymg - copycates@gmail.com)",
+        "url": "https://ulyss.tech"
+    },
+    "eyeglass": {
+        "needs": "*",
+        "exports": "eyeglass-exports.js"
+    },
+    "homepage": "https://github.com/thonymg/soratra-responsive",
+    "keywords": [
+        "css",
+        "eyeglass-module",
+        "mixins",
+        "sass",
+        "scss",
+        "Typo",
+        "Vertical Rhythm",
+        "responsive",
+        "modular-scale"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "style": "core/soratra.scss",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:thonymg/soratra-responsive.git"
+    },
+    "version": "0.12.1"
+}

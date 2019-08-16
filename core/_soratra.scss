@@ -1,5 +1,5 @@
-@import "compass/typography/vertical_rhythm";
-@import "modular-scale";
+@import "lib/verticalrhythm/vertical_rhythm";
+@import "lib/modularscale/modularscale";
 @import "tmg-media-query";
 //---------------------------
 // Modular scale variables
@@ -13,9 +13,9 @@ $tmg-x-large-ms: 18px, 1.25;
 //---------------------------
 // Compass Vertical Rhythm variables
 
-$base-line-height : 24px;
-$rhythm-unit : "rem";
-$rem-with-px-fallback : true;
+$base-line-height: 24px;
+$rhythm-unit: "rem";
+$rem-with-px-fallback: true;
 
 //---------------------------
 // Margin Placeholder
@@ -29,15 +29,15 @@ $rem-with-px-fallback : true;
 //---------------------------
 // Thony Mixins
 
-@mixin tmg-heading-size($tmg-f-size: 16px, $tmg-ratio: $golden, $tmg-start: 6 ) {
-
-  $h-val : 6;
+@mixin tmg-heading-size($tmg-f-size: 16px, $tmg-ratio: $golden, $tmg-start: 6) {
+  $h-val: 6;
   @for $i from 1 through $h-val {
-    $heading : h#{$i};
-    h#{$i} , .h#{$i}{
+    $heading: h#{$i};
+    h#{$i},
+    .h#{$i} {
       // compass mixins
-      $fz : ms( ( $tmg-start - $i), $tmg-f-size, $tmg-ratio);
-      @include adjust-font-size-to( $fz );
+      $fz: ms(($tmg-start - $i), $tmg-f-size, $tmg-ratio);
+      @include adjust-font-size-to($fz);
     }
   }
 }
@@ -45,15 +45,14 @@ $rem-with-px-fallback : true;
 @mixin tmg-all-heading-size() {
   @include tmg-mq("mobile") {
     @include tmg-heading-size($tmg-mobile-ms...);
-  };
+  }
 
   @include tmg-mq("tablette") {
     @include tmg-heading-size($tmg-tablette-ms...);
-  };
+  }
 
   @include tmg-mq("desktop") {
     @include tmg-heading-size($tmg-desktop-ms...);
-
   }
   @include tmg-mq("large") {
     @include tmg-heading-size($tmg-large-ms...);
@@ -64,49 +63,58 @@ $rem-with-px-fallback : true;
 }
 
 @mixin tmg-base-heading-style() {
-  
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
-  h5, .h5,
-  h6, .h6 {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
     @content;
   }
 }
 
 @mixin tmg-select-heading-style($selector) {
-
-  h1#{$selector}, .h1#{$selector},
-  h2#{$selector}, .h2#{$selector},
-  h3#{$selector}, .h3#{$selector},
-  h4#{$selector}, .h4#{$selector},
-  h5#{$selector}, .h5#{$selector},
-  h6#{$selector}, .h6#{$selector} {
+  h1#{$selector},
+  .h1#{$selector},
+  h2#{$selector},
+  .h2#{$selector},
+  h3#{$selector},
+  .h3#{$selector},
+  h4#{$selector},
+  .h4#{$selector},
+  h5#{$selector},
+  .h5#{$selector},
+  h6#{$selector},
+  .h6#{$selector} {
     @content;
   }
 }
 
-@mixin tmg-others-block-container($selector : null) {
-  p#{$selector} ,
-  ul#{$selector} ,
-  ol#{$selector} ,
-  pre#{$selector} ,
-  table#{$selector} ,
-  blockquote#{$selector} ,
-  dl#{$selector} ,
+@mixin tmg-others-block-container($selector: null) {
+  p#{$selector},
+  ul#{$selector},
+  ol#{$selector},
+  pre#{$selector},
+  table#{$selector},
+  blockquote#{$selector},
+  dl#{$selector},
   form#{$selector} {
-    @content
+    @content;
   }
 }
-@mixin tmg-others-block-list($selector : null) {
-  li#{$selector} ,
-  dt#{$selector} ,
+@mixin tmg-others-block-list($selector: null) {
+  li#{$selector},
+  dt#{$selector},
   dd#{$selector} {
-    @content
+    @content;
   }
 }
-
 
 @mixin tmg-base-vertical-rhythm() {
   //Compass mixins
@@ -114,28 +122,27 @@ $rem-with-px-fallback : true;
 
   @include tmg-base-heading-style() {
     @extend %invisible-all-margin;
-  };
+  }
   @include tmg-all-heading-size();
   @include tmg-others-block-container() {
     @extend %invisible-all-margin;
-  };
+  }
 }
 
 // the base mixins
 @include tmg-base-vertical-rhythm();
 
 // Mixins for easy heading style
-@include tmg-base-heading-style(){
+@include tmg-base-heading-style() {
   color: red;
 }
 
 // Mixins for easy heading style with a selector
-@include tmg-select-heading-style(".truc"){
+@include tmg-select-heading-style(".truc") {
   color: blue;
 }
 
-
 // Mixins for easy block container style with selector
-@include tmg-others-block-container(".foo"){
-	color: green
+@include tmg-others-block-container(".foo") {
+  color: green;
 }
