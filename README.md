@@ -96,6 +96,8 @@ $tmg-mobile-ms: 13px, $golden, 8;
 
 ### use
 
+[Demo](http://www.sassmeister.com/gist/756b142d9fe22a4d211c116fbf9a51ef)
+
 for the responsive typography
 
 ```scss

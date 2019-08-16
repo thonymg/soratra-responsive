@@ -130,19 +130,19 @@ $rem-with-px-fallback: true;
 }
 
 // the base mixins
-@include tmg-base-vertical-rhythm();
+// @include tmg-base-vertical-rhythm();
 
 // Mixins for easy heading style
-@include tmg-base-heading-style() {
-  color: red;
-}
+// @include tmg-base-heading-style() {
+//   color: red;
+// }
 
 // Mixins for easy heading style with a selector
-@include tmg-select-heading-style(".truc") {
-  color: blue;
-}
+// @include tmg-select-heading-style(".truc") {
+//   color: blue;
+// }
 
 // Mixins for easy block container style with selector
-@include tmg-others-block-container(".foo") {
-  color: green;
-}
+// @include tmg-others-block-container(".foo") {
+//   color: green;
+// }
